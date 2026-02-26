@@ -29,7 +29,7 @@ PUT _inference/text_embedding/jina-embeddings-v5
   "service": "jinaai",
   "service_settings": {
     "api_key": "YOUR_JINA_API_KEY",
-    "model_id": "jina-embeddings-v5"
+    "model_id": "jina-embeddings-v5-text-small"
   }
 }
 
@@ -40,7 +40,7 @@ PUT _inference/text_embedding/jina-embeddings-v5
 # The `semantic_text` field handles semantic search.
 # It delegates embedding generation to the endpoint created in Step 1.
 
-PUT fresh_produce_jina
+PUT fresh_produce
 {
   "settings": {
     "number_of_replicas": 0,
@@ -74,7 +74,7 @@ PUT fresh_produce_jina
 # The `semantic_text` field in each doc is sent to JINA to generate
 # the embedding, which is stored inside Elasticsearch.
 
-POST fresh_produce_jina/_bulk
+POST fresh_produce/_bulk
 { "index": { "_id": "1" } }
 { "id": 1, "name": "Cherry Tomatoes", "price": 12.5, "discount_price": null, "stock_kg": 85, "category": "vegetables", "description": "Sweet cherry tomatoes, perfect for salads and snacking. Locally grown and fresh.", "on_sale": false, "image_url": "https://imgur.com/w04NNaB.jpg", "updated_at": "2026-02-08T10:00:00Z", "semantic_content": "Cherry Tomatoes Sweet cherry tomatoes, perfect for salads and snacking. Locally grown and fresh. vegetables" }
 { "index": { "_id": "2" } }
@@ -101,13 +101,13 @@ POST fresh_produce_jina/_bulk
 # STEP 4 — Verify (optional but recommended)
 # ══════════════════════════════════════════════════════════════════════
 
-GET fresh_produce_jina/_count
+GET fresh_produce/_count
 
-GET fresh_produce_jina/_search
+GET fresh_produce/_search
 {
   "query": {
     "semantic": {
-      "field": "semantic_text",
+      "field": "semantic_content",
       "query": "healthy leafy greens"
     }
   },
