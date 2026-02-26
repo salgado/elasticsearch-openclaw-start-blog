@@ -86,12 +86,7 @@ The `elasticsearch-openclaw` skill is read-only by design:
 
 This is why the setup must be done manually via DevTools scripts.
 
-## Related Links
-
-- **Tutorial Blog Post**: [SearchClaw: Bring Elasticsearch to OpenClaw](https://elastic.co/blog)
-- **Skill on ClawHub**: [elasticsearch-openclaw](https://clawhub.com/skills/elasticsearch-openclaw)
-- **OpenClaw Docs**: https://docs.openclaw.ai
 
 ## License
 
-Apache 2.0
+MIT
