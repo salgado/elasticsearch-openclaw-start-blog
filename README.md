@@ -4,15 +4,15 @@ This repository contains DevTools scripts and OpenClaw workspace configuration f
 
 ## What's Included
 
-- **DevTools Scripts** (`.txt` files): Kibana Dev Tools commands to set up Elasticsearch indices with sample data
+- **DevTools Scripts** (`.md` files): Kibana Dev Tools commands to set up Elasticsearch indices with sample data
 - **OpenClaw Workspace**: Agent configuration and environment template
 
 ## Repository Structure
 
 ```
 elasticsearch-openclaw-start-blog/
-├── devtools_fresh_produce.txt         ← Creates fresh_produce index (10 products)
-├── devtools_app_logs_synthetic.txt    ← Creates app-logs-synthetic index (30 logs)
+├── devtools_fresh_produce.md         ← Creates fresh_produce index (10 products)
+├── devtools_app_logs_synthetic.md    ← Creates app-logs-synthetic index (30 logs)
 └── openclaw-workspace-elastic-blog/
     ├── AGENTS.md                      ← Agent briefing
     ├── .env.example                   ← Credentials template
@@ -30,10 +30,10 @@ curl -fsSL https://elastic.co/start-local | sh
 ### 2. Run DevTools Scripts
 
 1. Open Kibana Dev Tools: http://localhost:5601 → Dev Tools
-2. Copy contents of `devtools_fresh_produce.txt`
+2. Copy contents of `devtools_fresh_produce.md`
 3. Paste into Dev Tools console
 4. Run each numbered block sequentially (Ctrl/Cmd+Enter)
-5. Repeat for `devtools_app_logs_synthetic.txt`
+5. Repeat for `devtools_app_logs_synthetic.md`
 
 ### 3. Install the Skill
 
